@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd
 
 rng = np.random.default_rng(123)
 
@@ -52,11 +53,21 @@ plt.imshow(V, cmap="hot", aspect="auto")
 plt.title("Venta de 30 dias")
 plt.xlabel("Producto")
 plt.ylabel("Dia")
-plt.show()
+# plt.show()
 
+#Grafico de barras para la cantidad de productos vendidos
 plt.bar(np.arange(len(ventaProducto)), ventaProducto)
 plt.title("Ventas por producto en 30 dias")
 plt.xlabel("Producto")
+plt.xticks(np.arange(nProd), np.arange(1, nProd+1))
 plt.ylabel("Cantidad de productos vendidos")
-plt.show()
+# plt.show()
+
+#Importar a un csv
+df = pd.DataFrame(V, columns=[f"Producto {i}" for i in range(1, nProd+1)])
+df.insert(0, "Dia", np.arange(1, dias+1))
+df.insert((df.shape[1]), "Ventas totales por dia", ventaDia)
+
+print(df.head())
+
 
