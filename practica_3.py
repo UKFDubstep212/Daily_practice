@@ -67,6 +67,7 @@ plt.ylabel("Cantidad de productos vendidos")
 df = pd.DataFrame(V, columns=[f"Producto {i}" for i in range(1, nProd+1)])
 df.insert(0, "Dia", np.arange(1, dias+1))
 df.insert((df.shape[1]), "Ventas totales por dia", ventaDia)
+df.to_csv("Ventas", index=False)
 
 print(df.head())
 
