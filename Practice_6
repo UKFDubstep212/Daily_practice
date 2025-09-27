@@ -1,0 +1,58 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+rng = np.random.default_rng(12)
+
+#numpy
+#Array de numeros aleatorios entre 0 y 1
+A = rng.uniform(0,1,10)
+print(A)
+print(np.std(A))
+print(np.mean(A))
+print(np.median(A))
+
+#Matriz de numeros enteros
+B = rng.integers(1,9,(3,3))
+print(B)
+print(np.transpose(B))
+
+
+#Pandas
+edad = rng.integers(10,30,5)
+print(edad)
+
+df = pd.DataFrame({
+    "Nombre":["A", "B", "C", "D", "E"],
+    "Edad": edad,
+    "Ciudad": ["A", "B", "C", "D", "E"]
+})
+
+print(np.mean(df["Edad"]))
+
+filtro = df["Edad"] > 25
+df = df[filtro]
+#Nos da estadisticas principales del data frame
+print(df.describe())
+#Nos da la informacion general de las variables y forma del dataframe
+print(df.info())
+
+#Matplotlib
+x = np.arange(1,11)
+y = x ** 2
+
+plt.plot(x,y)
+plt.title("Cuadrados")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.legend("f=x^2")
+plt.show()
+
+val = rng.standard_normal((100, 1))
+plt.hist(val, bins=20)
+plt.show()
+plt.hist(val, bins=10)
+plt.show()
+
+
+
