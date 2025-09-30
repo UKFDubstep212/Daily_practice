@@ -17,14 +17,17 @@ df_clima = pd.DataFrame({
     "Temperatura": mes_simulado
 })
 
-#Grafica la temperatura por dia
-plt.plot((np.arange(30)+1), mes_simulado)
-plt.title("Temperatur por dia")
-plt.xlabel("Dias")
-plt.ylabel("Temperatura")
-plt.grid()
-plt.show()
+print(df_clima["Dia"].argmax())
+print(df_clima["Temperatura"].max())
 
-#Histograma
-plt.hist(mes_simulado, bins=10)
-plt.show()
+# #Grafica la temperatura por dia
+# plt.plot((np.arange(30)+1), mes_simulado)
+# plt.title("Temperatur por dia")
+# plt.xlabel("Dias")
+# plt.ylabel("Temperatura")
+# plt.grid()
+# plt.show()
+
+# #Histograma
+# plt.hist(mes_simulado, bins=10)
+# plt.show()
