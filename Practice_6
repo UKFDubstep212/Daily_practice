@@ -17,7 +17,6 @@ B = rng.integers(1,9,(3,3))
 print(B)
 print(np.transpose(B))
 
-
 #Pandas
 edad = rng.integers(10,30,5)
 print(edad)
